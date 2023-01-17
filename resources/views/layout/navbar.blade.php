@@ -55,7 +55,6 @@
                         <li><a class="dropdown-item" href="{{ URL::to('events') }}"> Event </a></li>
                         <li><a class="dropdown-item" href="hkm"> Hkm </a></li>
                     </ul>
-                    
                 </li>
                 <li class="nav-item active"><a class="nav-link text-dark" href="{{ URL::to('packages') }}"> PAKET WISATA</a></li>
                 <li class="nav-item dropdown">
