@@ -17,7 +17,7 @@ class AtractionController extends Controller
 
         $data = [
             'title' => 'Atractions',
-            'atractions' => $atractions,
+            'datas' => $atractions,
             'categories' => $categories
         ];
 

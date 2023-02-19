@@ -60,8 +60,8 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link  dropdown-toggle text-dark" href="#" data-bs-toggle="dropdown"> PRODUK </a>
                     <ul class="dropdown-menu dropdown-menu-end">
-                        <li><a class="dropdown-item" href="#"> Kuliner </a></li>
-                        <li><a class="dropdown-item" href="#"> Kerajinan </a></li>
+                        <li><a class="dropdown-item" href="{{ URL::to('products/produk') }}"> Produk Olahan </a></li>
+                        <li><a class="dropdown-item" href="{{ URL::to('products/culinary') }}"> Kuliner </a></li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown">

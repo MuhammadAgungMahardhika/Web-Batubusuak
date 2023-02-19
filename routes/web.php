@@ -3,6 +3,7 @@
 use App\Http\Controllers\AtractionController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\PackageController;
+use App\Http\Controllers\ProductController;
 use App\Models\Atraction;
 use App\Models\AtractionCategory;
 use App\Models\event;
@@ -25,23 +26,23 @@ Route::get('/', function () {
     return view('index', ['title' => 'Batubusuak']);
 });
 
-Route::prefix('atractions')->group(function () {
-    Route::get('/', [AtractionController::class, 'index']);
-    Route::get('categories', [AtractionController::class, 'getByCategories']);
+Route::prefix('atractions')->controller(AtractionController::class)->group(function () {
+    Route::get('/', 'index');
+    Route::get('categories', 'getByCategories');
     Route::get('{atraction:id}', function (Atraction $atraction) {
         return $atraction->load('atraction_galleries');
     });
 });
 
-Route::prefix('events')->group(function () {
-    Route::get('/', [EventController::class, 'index']);
+Route::prefix('events')->controller(EventController::class)->group(function () {
+    Route::get('/', 'index');
     Route::get('{event:id}', function (Event $event) {
         return $event->load('event_gallery');
     });
 });
 
-Route::prefix('packages')->group(function () {
-    Route::get('/', [PackageController::class, 'index']);
+Route::prefix('packages')->controller(PackageController::class)->group(function () {
+    Route::get('/', 'index');
     Route::get('{package:id}', function (Package $package) {
         $data =  [
             'package' => $package->load('package_galleries', 'package_facilities'),
@@ -49,6 +50,9 @@ Route::prefix('packages')->group(function () {
         ];
         return view('detail_package', $data);
     });
+});
+Route::prefix('products')->controller(ProductController::class)->group(function () {
+    Route::get('/{category}', 'getByCategory');
 });
 
 
