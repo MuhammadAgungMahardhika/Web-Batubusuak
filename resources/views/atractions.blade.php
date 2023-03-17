@@ -75,8 +75,8 @@
                             <!-- Awal atraksi -->
                             <a href="" onclick="showDetailAtraction('{{ $data->id }}')" data-bs-toggle="modal" data-bs-target="#detailAtraction" style="color: #eaeaea;">
                                 <div class="card cardEfek">
-                                       @if(@isset($data->atraction_galleries->first()->url))
-                                              <img src="images/{{ $data->atraction_galleries->first()->url }}" class="card-img">
+                                       @if(@isset($data->atraction_gallery->first()->url))
+                                              <img src="images/{{ $data->atraction_gallery->first()->url }}" class="card-img">
                                        @endif
                                   
                                     <div class="card-header bg-white text-start" style="color: #3B3B3B;">
@@ -157,7 +157,7 @@
                 $.ajax({
                     url:`atractions/${id}`,
                     success : function(response){
-                    let galleries =  response.atraction_galleries
+                    let galleries =  response.atraction_gallery
                     let i = 0
                     $('#modalName').html(`<h5 class="modal-title" id="modalName">${response.name}</h5>`)
                     $('#modalDescription').html(`<h5 class="modal-title" id="modalName">${response.description}</h5>`)

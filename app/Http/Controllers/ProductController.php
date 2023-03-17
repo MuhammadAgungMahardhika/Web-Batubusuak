@@ -14,8 +14,7 @@ class ProductController extends Controller
 
     public function getByCategory($category)
     {
-        $products = Product::with(['product_category', 'product_gallery'])->get();
-        dd($products);
+        $products = Product::with(['product_category', 'product_gallery'])->get()->where('product_category.category', $category);
         $data = [
             'title' => 'PRODUK WISATA',
             'datas' => $products

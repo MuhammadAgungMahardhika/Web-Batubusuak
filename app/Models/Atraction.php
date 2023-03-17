@@ -16,7 +16,7 @@ class Atraction extends Model
         return $this->belongsTo(AtractionCategory::class, 'atraction_category_id');
     }
 
-    public function atraction_galleries()
+    public function atraction_gallery()
     {
         return $this->hasMany(AtractionGallery::class, 'atraction_id');
     }

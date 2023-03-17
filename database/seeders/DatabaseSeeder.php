@@ -28,7 +28,8 @@ class DatabaseSeeder extends Seeder
             PackageGallerySeeder::class,
             PackageFacilitySeeder::class,
             ProductCategorySeeder::class,
-            ProductSeeder::class
+            ProductSeeder::class,
+            ProductGallerySeeder::class
         ]);
         User::factory(2)->create();
     }

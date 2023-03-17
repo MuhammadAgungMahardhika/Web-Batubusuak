@@ -10,7 +10,7 @@ class PackageController extends Controller
     //
     public function index()
     {
-        $packages = Package::with('package_galleries', 'package_facilities')->get();
+        $packages = Package::with('package_gallery', 'package_facility')->get();
         $data = [
             'packages' => $packages,
             'title' => 'packages'

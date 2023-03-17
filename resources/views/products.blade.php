@@ -33,8 +33,8 @@
                                 </div>
                                 <div class="carousel-inner">
                                   <div class="carousel-item active">
-                                    <a href="" onclick="showDetailAtraction('1')" data-bs-toggle="modal" data-bs-target="#detailAtraction" style="color: #eaeaea;">
-                                        <img src="images/LUBUAK-MANDE-RUBIAH.JPG" class="d-block w-100" alt="...">
+                                    <a href="" onclick="showDetail('1')" data-bs-toggle="modal" data-bs-target="#detailAtraction" style="color: #eaeaea;">
+                                        <img src="images/" class="d-block w-100" alt="...">
                                         <div class="carousel-caption d-none d-md-block justify-content-center" >
                                           <h5>Lubuak Mande Rubiah</h5>
                                         </div>
@@ -42,14 +42,14 @@
                                    
                                   </div>
                                   <div class="carousel-item">
-                                    <img src="images/JEMBATAN-SARINGAN.JPG" class="d-block w-100" alt="...">
+                                    <img src="images/" class="d-block w-100" alt="...">
                                     <div class="carousel-caption d-none d-md-block">
                                       <h5>Saringan</h5>
                                       
                                     </div>
                                   </div>
                                   <div class="carousel-item">
-                                    <img src="images/LUBUAK-BIRU.JPG" class="d-block w-100" alt="...">
+                                    <img src="images/" class="d-block w-100" alt="...">
                                     <div class="carousel-caption d-none d-md-block">
                                       <h5>Lubuak Biru</h5>
                                      
@@ -70,17 +70,17 @@
                 </div>
                 <div class="col-9 my-4">
                     <div class="row ">
-                        @foreach($atractions as $atraction) 
+                        @foreach($datas as $data) 
                         <div class="col-lg-3 col-md-4 mb-4 col-sm-6">
                             <!-- Awal atraksi -->
-                            <a href="" onclick="showDetailAtraction('{{ $atraction->id }}')" data-bs-toggle="modal" data-bs-target="#detailAtraction" style="color: #eaeaea;">
+                            <a href="" onclick="showDetail('{{ $data->id }}')" data-bs-toggle="modal" data-bs-target="#detailAtraction" style="color: #eaeaea;">
                                 <div class="card cardEfek">
-                                       @if(@isset($atraction->atraction_galleries->first()->url))
-                                              <img src="images/{{ $atraction->atraction_galleries->first()->url }}" class="card-img">
-                                       @endif
+                                    @if(@isset($data->product_gallery->first()->url))
+                                       <img src="{{ URL::to('images/'.$data->product_gallery->first()->url) }}" class="card-img">
+                                    @endif
                                   
                                     <div class="card-header bg-white text-start" style="color: #3B3B3B;">
-                                        <p class="card-title">{{ $atraction->name; }}</p>
+                                        <p class="card-title">{{ $data->name; }}</p>
                                         <table class="table table-borderless table-sm small figure-caption">
                                             <tbody>
                                                 <tr>
@@ -88,25 +88,18 @@
                                                         Price
                                                     </td>
                                                     <td>
-                                                        : {{ $atraction->price; }}
+                                                        : {{ $data->price; }}
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td>
-                                                        Buka
+                                                        Kontak
                                                     </td>
                                                     <td>
-                                                        : {{ $atraction->open; }} - WIB
+                                                        : {{ $data->contact_person; }}
                                                     </td>
                                                 </tr>
-                                                <tr>
-                                                    <td>
-                                                        Tutup
-                                                    </td>
-                                                    <td>
-                                                        : {{ $atraction->close; }} - WIB
-                                                    </td>
-                                                </tr>
+                                               
                                             </tbody>
                                         </table>
                                         <p class="card-text "> Tekan untuk melihat</p>
@@ -153,11 +146,12 @@
         </div>
     </div>
     <script>
-            function showDetailAtraction(id) {
+            function showDetail(id) {
                 $.ajax({
-                    url:`atractions/${id}`,
+                    url:`product/${id}`,
                     success : function(response){
-                    let galleries =  response.atraction_galleries
+                    console.log(response)
+                    let galleries = response.product_galleries
                     let i = 0
                     $('#modalName').html(`<h5 class="modal-title" id="modalName">${response.name}</h5>`)
                     $('#modalDescription').html(`<h5 class="modal-title" id="modalName">${response.description}</h5>`)

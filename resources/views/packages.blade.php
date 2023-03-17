@@ -16,7 +16,7 @@
                 <div class="card mb-3 shadow-sm">
                     <div class="row g-0">
                         <div class="col-md-4">
-                                <img src="images/{{ $package->package_galleries->first()->url }} " class="img-fluid rounded-start" alt="...">
+                                <img src="images/{{ $package->package_gallery->first()->url }} " class="img-fluid rounded-start" alt="...">
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">

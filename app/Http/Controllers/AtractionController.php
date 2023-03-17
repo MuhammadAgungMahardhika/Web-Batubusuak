@@ -12,7 +12,7 @@ class AtractionController extends Controller
     //
     public function index()
     {
-        $atractions = Atraction::with(['atraction_category', 'atraction_galleries'])->get();
+        $atractions = Atraction::with(['atraction_category', 'atraction_gallery'])->get();
         $categories = AtractionCategory::with(['atraction'])->get();
 
         $data = [

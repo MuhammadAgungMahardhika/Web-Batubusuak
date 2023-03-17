@@ -8,6 +8,7 @@ use App\Models\Atraction;
 use App\Models\AtractionCategory;
 use App\Models\event;
 use App\Models\Package;
+use App\Models\Product;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,7 +31,7 @@ Route::prefix('atractions')->controller(AtractionController::class)->group(funct
     Route::get('/', 'index');
     Route::get('categories', 'getByCategories');
     Route::get('{atraction:id}', function (Atraction $atraction) {
-        return $atraction->load('atraction_galleries');
+        return $atraction->load('atraction_gallery');
     });
 });
 
@@ -45,7 +46,7 @@ Route::prefix('packages')->controller(PackageController::class)->group(function 
     Route::get('/', 'index');
     Route::get('{package:id}', function (Package $package) {
         $data =  [
-            'package' => $package->load('package_galleries', 'package_facilities'),
+            'package' => $package->load('package_gallery', 'package_facility'),
             'title' => 'Detail Package'
         ];
         return view('detail_package', $data);
@@ -53,6 +54,9 @@ Route::prefix('packages')->controller(PackageController::class)->group(function 
 });
 Route::prefix('products')->controller(ProductController::class)->group(function () {
     Route::get('/{category}', 'getByCategory');
+    Route::get('{product:id}', function (Product $product) {
+        return $product->load('product_gallery');
+    });
 });
 
 

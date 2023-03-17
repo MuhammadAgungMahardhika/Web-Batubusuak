@@ -19,7 +19,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Philosopher:wght@400;700&display=swap" rel="stylesheet">
 
     <!-- My CSS -->
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="{{ URL::to('css/style.css')}}" />
 
     <!-- Gsap -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
