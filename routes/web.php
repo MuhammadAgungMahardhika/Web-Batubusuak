@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AccomodationController;
 use App\Http\Controllers\AtractionController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\PackageController;
@@ -53,6 +54,13 @@ Route::prefix('packages')->controller(PackageController::class)->group(function 
     });
 });
 Route::prefix('products')->controller(ProductController::class)->group(function () {
+    Route::get('/', 'index');
+    Route::get('{category}', 'getByCategory');
+    Route::get('{product:id}', function (Product $product) {
+        return $product->load('product_gallery');
+    });
+});
+Route::prefix('accomodation')->controller(AccomodationController::class)->group(function () {
     Route::get('/', 'index');
     Route::get('{category}', 'getByCategory');
     Route::get('{product:id}', function (Product $product) {

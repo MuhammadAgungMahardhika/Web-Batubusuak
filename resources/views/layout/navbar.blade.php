@@ -40,23 +40,27 @@
     <div class="container-fluid">
         <a class="navbar-brand d-flex justify-content-center" href="{{ URL::to('index.php') }}">
             <img src="{{ URL::to('images/LOGO-POKDARWIS.png') }}" class="rounded" width="50">
-            <span class="display-6 ms-2 text-success" style="font-family: 'Stick No Bills', sans-serif;">BATU BUSUK</span>
+            <span class="display-6 ms-2 text-success" style="font-family: 'Stick No Bills', sans-serif;">BATU
+                BUSUK</span>
         </a>
-        <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#main_nav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#main_nav"
+            aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="main_nav">
             <ul class="navbar-nav ms-auto me-4 rounded" style="font-family: 'Stick No Bills', sans-serif;">
                 <li class="nav-item active"><a class="nav-link text-dark" href="{{ URL::to('/') }}"> BERANDA </a></li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link  dropdown-toggle text-dark" href="#" data-bs-toggle="dropdown"> PARIWISATA </a>
+                    <a class="nav-link  dropdown-toggle text-dark" href="#" data-bs-toggle="dropdown"> PARIWISATA
+                    </a>
                     <ul class="dropdown-menu dropdown-menu-end">
                         <li><a class="dropdown-item" href="{{ URL::to('atractions') }}"> Atraksi </a></li>
                         <li><a class="dropdown-item" href="{{ URL::to('events') }}"> Event </a></li>
                         <li><a class="dropdown-item" href="hkm"> Hkm </a></li>
                     </ul>
                 </li>
-                <li class="nav-item active"><a class="nav-link text-dark" href="{{ URL::to('packages') }}"> PAKET WISATA</a></li>
+                <li class="nav-item active"><a class="nav-link text-dark" href="{{ URL::to('packages') }}"> PAKET
+                        WISATA</a></li>
                 <li class="nav-item dropdown">
                     <a class="nav-link  dropdown-toggle text-dark" href="#" data-bs-toggle="dropdown"> PRODUK </a>
                     <ul class="dropdown-menu dropdown-menu-end">
@@ -65,15 +69,16 @@
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link  dropdown-toggle text-dark" href="#" data-bs-toggle="dropdown"> AKOMODASI</a>
+                    <a class="nav-link  dropdown-toggle text-dark" href="#" data-bs-toggle="dropdown">
+                        AKOMODASI</a>
                     <ul class="dropdown-menu dropdown-menu-end">
-                        <li><a class="dropdown-item" href="#"> Akomodasi</a></li>
-                        <li><a class="dropdown-item" href="#"> Transportasi </a></li>
+                        <li><a class="dropdown-item" href="{{ URL::to('transport') }}"> Transportasi </a></li>
+                        <li><a class="dropdown-item" href="{{ URL::to('accomodation') }}"> Penginapan</a></li>
                     </ul>
                 </li>
                 <li class="nav-item"><a class="nav-link text-dark" href="kontak.php"> SEJARAH DAN KEBUDAYAAN </a></li>
                 <li class="nav-item"><a class="nav-link text-dark" href="kontak.php"> KONTAK </a></li>
             </ul>
-        </div> 
-    </div> 
+        </div>
+    </div>
 </nav>
