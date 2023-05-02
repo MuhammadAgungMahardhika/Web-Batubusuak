@@ -148,10 +148,10 @@
     <script>
             function showDetail(id) {
                 $.ajax({
-                    url:`product/${id}`,
+                    url: '{!! URL::to("products") !!}'+`/${id}`,
                     success : function(response){
                     console.log(response)
-                    let galleries = response.product_galleries
+                    let galleries = response.product_gallery
                     let i = 0
                     $('#modalName').html(`<h5 class="modal-title" id="modalName">${response.name}</h5>`)
                     $('#modalDescription').html(`<h5 class="modal-title" id="modalName">${response.description}</h5>`)

@@ -25,8 +25,6 @@ class AtractionController extends Controller
     }
     public function getByCategories()
     {
-
-
         return ['halo'];
     }
 }

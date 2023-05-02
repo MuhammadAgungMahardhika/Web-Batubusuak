@@ -7,7 +7,7 @@
     <meta name="keywords" content="Batubusuak, Batubusuk, JavaScript">
     <meta name="author" content="Muhammad Agung Mahardhika">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="shortcut icon" href="images/LOGO POKDARWIS.png">
+    <link rel="shortcut icon" href="{{ URL::to('images/LOGO-POKDARWIS.png')}}">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
@@ -26,7 +26,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
 
     {{-- Jquery --}}
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="{{ URL::to('https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js') }}"></script>
     <title>{{ $title }}</title>
 </head>
 

@@ -29,7 +29,7 @@ Route::get('/', function () {
 
 Route::prefix('atractions')->controller(AtractionController::class)->group(function () {
     Route::get('/', 'index');
-    Route::get('categories', 'getByCategories');
+    Route::get('category', 'getByCategories');
     Route::get('{atraction:id}', function (Atraction $atraction) {
         return $atraction->load('atraction_gallery');
     });
@@ -53,7 +53,8 @@ Route::prefix('packages')->controller(PackageController::class)->group(function 
     });
 });
 Route::prefix('products')->controller(ProductController::class)->group(function () {
-    Route::get('/{category}', 'getByCategory');
+    Route::get('/', 'index');
+    Route::get('{category}', 'getByCategory');
     Route::get('{product:id}', function (Product $product) {
         return $product->load('product_gallery');
     });

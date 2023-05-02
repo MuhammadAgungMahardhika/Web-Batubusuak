@@ -73,7 +73,7 @@
                         @foreach($datas as $data) 
                         <div class="col-lg-3 col-md-4 mb-4 col-sm-6">
                             <!-- Awal atraksi -->
-                            <a href="" onclick="showDetailAtraction('{{ $data->id }}')" data-bs-toggle="modal" data-bs-target="#detailAtraction" style="color: #eaeaea;">
+                            <a href="" onclick="showDetail('{{ $data->id }}')" data-bs-toggle="modal" data-bs-target="#detailAtraction" style="color: #eaeaea;">
                                 <div class="card cardEfek">
                                        @if(@isset($data->atraction_gallery->first()->url))
                                               <img src="images/{{ $data->atraction_gallery->first()->url }}" class="card-img">
@@ -153,7 +153,7 @@
         </div>
     </div>
     <script>
-            function showDetailAtraction(id) {
+            function showDetail(id) {
                 $.ajax({
                     url:`atractions/${id}`,
                     success : function(response){

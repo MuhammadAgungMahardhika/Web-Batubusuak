@@ -34,14 +34,14 @@
             <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-indicators">
                     <?php $i = 0; ?>
-                  @foreach($package->package_galleries as $pg)
+                  @foreach($package->package_gallery as $pg)
                   <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="{{ $i }}" class="{{ $i == 0 ? 'active' : '' }}" aria-current="true" aria-label="Slide 1"></button>
                   <?php $i++ ?>
                   @endforeach
                 </div>
                 <div class="carousel-inner">
                   <?php $c = 0; ?>
-                  @foreach($package->package_galleries as $pg)
+                  @foreach($package->package_gallery as $pg)
                     <div class="carousel-item {{ $c==0?'active':'' }}">
                       <img src="{{ URL::to('images/PATAMUAN.JPG') }}" class="d-block w-100" alt="...">
                     </div>
